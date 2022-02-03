@@ -1,0 +1,36 @@
+<%= form_with model: @note do |f| %>
+
+ <% if @note.errors.any? %>
+  <ul>
+    <li><%= @note.errors.full_messages %></li>
+  </ul>
+
+  <% end %> 
+  <div class="">
+
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+
+  </div>
+
+  <div class="">
+
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+
+  </div>
+
+  <div class="">
+
+    <%= f.label :tag %><br>
+    <%= f.text_field :tag %>
+  </div>
+
+  <br>
+  <div class="">
+
+    <%= f.submit %>
+
+  </div>
+
+  <% end %>
