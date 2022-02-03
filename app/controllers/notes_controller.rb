@@ -22,10 +22,16 @@ class NotesController < ApplicationController
   end
 
   def edit
+    @note = Note.find(params[:id])
   end
 
   def update
-
+    @note = Note.find(params[:id])
+    if @note.update(note_params) then
+      redirect_to @note
+    else
+      render 'edit', status: :unprocessable_entity
+    end
   end
 
   def destroy

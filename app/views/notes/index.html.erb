@@ -2,7 +2,16 @@
 
 <% @notes.each do |note| %>
 
-  <p> <%= note %> </p>
+  <p> <%= note.title %> </p>
+  <p> <%= note.description %> </p>
+
+  <% if note.tag? %>
+    <i><u> <%= note.tag %> </u></i>
+  <% end %>
 
 
 <% end %>
+
+<br>
+
+<%= link_to 'Note It', new_note_path %>
